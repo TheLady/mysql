@@ -10,9 +10,9 @@ server.listen(common.fakeServerPort, function (err) {
 
   var messages = [];
 
-  console.log = function (str) {
-    if (typeof str === 'string' && str.length !== 0) {
-      messages.push(str);
+  console.log = function (msg) {
+    if (String(msg).indexOf('--') !== -1) {
+      messages.push(msg);
     }
   };
 
